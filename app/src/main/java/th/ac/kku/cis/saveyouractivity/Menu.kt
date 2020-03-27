@@ -1,6 +1,7 @@
 package th.ac.kku.cis.saveyouractivity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -8,16 +9,17 @@ import com.google.firebase.database.*
 
 
 class Menu : AppCompatActivity() {
-    lateinit var auth: FirebaseAuth
     lateinit var mDB: DatabaseReference
     var uid:String=""
     lateinit var user:FirebaseUser
+    var USER:UserData= UserData()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-        auth = FirebaseAuth.getInstance()
-        user=auth.currentUser!!
-        uid = user!!.uid
+        USER.UserData()
+        Log.w("OK",USER.getuid())
+        uid = USER.getuid()
+        user = USER.getuser()
         mDB =FirebaseDatabase.getInstance().reference.child("Auth")//.child(uid!!)
         add_st()
     }
@@ -25,7 +27,6 @@ class Menu : AppCompatActivity() {
         mDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.hasChild(uid)) {
-                    mDB.child(uid).child("name").setValue(user.displayName.toString())
                     // it exists!
                 } else {
                     // does not exist
@@ -35,8 +36,8 @@ class Menu : AppCompatActivity() {
                     else{
                         mDB.child(uid).child("role").setValue("student")
                     }
-                    mDB.child(uid).child("name").setValue(user.displayName.toString())
                 }
+                mDB.child(uid).child("name").setValue(USER.getname())
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
