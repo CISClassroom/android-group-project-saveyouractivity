@@ -1,7 +1,4 @@
 # Save-your-activity
 
-Hi
 
-ทดสอบ
-
-อิอิ
+เป็นงานรายวิชา 935309 MOBILE APPLICATION DEVELOPMENT
