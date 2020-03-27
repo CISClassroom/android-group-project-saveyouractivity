@@ -2,6 +2,8 @@
 
 แอพเก็บและประชาสัมพันธ์กิจกรรมของนักศึกษา
 
+th.ac.kku.cis.saveyouractivity
+
 เป็นงานรายวิชา 935309 MOBILE APPLICATION DEVELOPMEN
 
 **สมาชิก**
