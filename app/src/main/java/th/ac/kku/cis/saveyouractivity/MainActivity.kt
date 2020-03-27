@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         googleClient = GoogleSignIn.getClient(this,gso)
         auth = FirebaseAuth.getInstance()
         sign_in.setOnClickListener { singIn() }
+        checklogin()
     }
     private fun singOut() {
         auth.signOut()
@@ -51,7 +52,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun checklogin(){
         if(auth.currentUser!=null){
-
+            val i = Intent(this, Menu::class.java)
+            startActivity(i)
         }
     }
 
