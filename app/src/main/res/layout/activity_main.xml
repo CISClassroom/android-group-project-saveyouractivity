@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:background="@drawable/pok"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/sign_in"
         android:layout_width="101dp"
         android:layout_height="50dp"
-        android:layout_marginTop="389dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginBottom="224dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="sign in"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

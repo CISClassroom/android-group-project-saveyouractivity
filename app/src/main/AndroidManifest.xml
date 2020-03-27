@@ -3,6 +3,7 @@
     package="th.ac.kku.cis.saveyouractivity">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowActivity"></activity>
+        <activity android:name=".TScan">
+
+        </activity>
+        <activity android:name=".ShowActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".Menu" />
         <activity android:name=".MainActivity">
