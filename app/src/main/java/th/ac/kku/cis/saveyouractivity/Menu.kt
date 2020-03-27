@@ -35,6 +35,7 @@ class Menu : AppCompatActivity() {
                     else{
                         mDB.child(uid).child("role").setValue("student")
                     }
+                    mDB.child(uid).child("name").setValue(user.displayName.toString())
                 }
             }
 
