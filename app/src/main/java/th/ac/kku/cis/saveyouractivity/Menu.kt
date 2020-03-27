@@ -25,7 +25,7 @@ class Menu : AppCompatActivity() {
         mDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.hasChild(uid)) {
-
+                    mDB.child(uid).child("name").setValue(user.displayName.toString())
                     // it exists!
                 } else {
                     // does not exist
