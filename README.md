@@ -2,7 +2,26 @@
 
 แอพเก็บและประชาสัมพันธ์กิจกรรมของนักศึกษา
 
-th.ac.kku.cis.saveyouractivity
+```json
+DB: {
+	Auth:{
+		uid:{
+			role:"student"/"teacher"
+		}
+	}
+	activity:{
+		qid:{
+			name:"?"
+			Details:"?"
+			image_url:"?"
+			close:boolen
+			member:{
+				uid:boolen
+			}
+		}
+	}
+}
+```
 
 เป็นงานรายวิชา 935309 MOBILE APPLICATION DEVELOPMEN
 
