@@ -11,6 +11,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ListView
+            android:id="@+id/ShowActivity"
+            android:layout_width="match_parent"
+            android:layout_height="312dp" />
+
         <Button
             android:id="@+id/B1"
             android:layout_width="match_parent"
