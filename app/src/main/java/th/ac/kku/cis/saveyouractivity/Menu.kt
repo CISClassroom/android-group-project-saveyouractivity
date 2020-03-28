@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -17,11 +19,17 @@ import kotlinx.android.synthetic.main.activity_menu.*
 
 class Menu : AppCompatActivity() {
     lateinit var mDB: DatabaseReference
+    lateinit var mDBAC: DatabaseReference
     var uid:String=""
     lateinit var user:FirebaseUser
     var USER:UserData= UserData()
     var role:String="student"
     lateinit var auth: FirebaseAuth
+    var ItemList: MutableList<ActivityItem>? = null
+
+    lateinit var adapter: ActivityAdapter
+    private var listViewItems: ListView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
@@ -37,6 +45,48 @@ class Menu : AppCompatActivity() {
             singOut()
             finish()
         }
+        ItemList = mutableListOf<ActivityItem>()
+        adapter = ActivityAdapter(this, ItemList!!)
+        listViewItems = findViewById<View>(R.id.ShowActivity) as ListView
+        listViewItems!!.setAdapter(adapter)
+        listViewItems!!.setOnItemClickListener { parent, view, position, id ->
+            Toast.makeText(this,ItemList!![position].objID.toString(),Toast.LENGTH_LONG).show()
+            /*
+            var i = Intent(this, Show::class.java)
+            i.putExtra("i", position)
+            startActivity(i)
+            */
+
+        }
+        mDBAC = FirebaseDatabase.getInstance().reference.child("Activity")
+        mDBAC.orderByKey().addValueEventListener(itemListener)
+    }
+    var itemListener: ValueEventListener = object : ValueEventListener {
+
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            // call function
+            addDataToList(dataSnapshot)
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Item failed, display log a message
+            Log.w("MainActivity", "loadItem:onCancelled", databaseError.toException())
+        }
+    }
+    private fun addDataToList(dataSnapshot: DataSnapshot) {
+        ItemList?.clear()
+        for (datas in dataSnapshot.children) {
+            //val name = datas.child("ShrubbedWord").value.toString()
+            //val map = datas.getValue() as HashMap<String, Any>
+            // add data to object
+            val ACItem = ActivityItem.create()
+            ACItem.objID = datas.key
+            //val urlobj =  datas.child("urlobj").getValue().toString()
+            ACItem.Name = datas.child("name").getValue().toString()
+            ACItem.ADate = datas.child("adate").getValue().toString()
+            ItemList!!.add(ACItem)
+        }
+        adapter.notifyDataSetChanged()
     }
     private fun singOut() {
         auth.signOut()

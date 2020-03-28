@@ -27,8 +27,6 @@ class ActivityAdapter(context: Context, ItemList: MutableList<ActivityItem>) : B
         val vh: ListRowHolder
 
 
-
-
         // get list view
         if (convertView == null) {
             view = mInflater.inflate(R.layout.content_item_activity, parent, false)
