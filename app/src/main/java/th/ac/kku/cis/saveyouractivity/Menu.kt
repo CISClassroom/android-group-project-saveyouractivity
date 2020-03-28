@@ -48,15 +48,13 @@ class Menu : AppCompatActivity() {
         ItemList = mutableListOf<ActivityItem>()
         adapter = ActivityAdapter(this, ItemList!!)
         listViewItems = findViewById<View>(R.id.ShowActivity) as ListView
+        listViewItems!!.visibility = View.GONE
         listViewItems!!.setAdapter(adapter)
         listViewItems!!.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this,ItemList!![position].objID.toString(),Toast.LENGTH_LONG).show()
-            /*
-            var i = Intent(this, Show::class.java)
-            i.putExtra("i", position)
+           // Toast.makeText(this,ItemList!![position].objID.toString(),Toast.LENGTH_LONG).show()
+            var i = Intent(applicationContext,th.ac.kku.cis.saveyouractivity.ShowActivity::class.java)
+            i.putExtra("i", ItemList!![position].objID.toString())
             startActivity(i)
-            */
-
         }
         mDBAC = FirebaseDatabase.getInstance().reference.child("Activity")
         mDBAC.orderByKey().addValueEventListener(itemListener)
@@ -107,12 +105,13 @@ class Menu : AppCompatActivity() {
                 val i = Intent(this, AddActivity::class.java)
                 startActivity(i)
             }
-            B2.visibility = View.VISIBLE
+            listViewItems!!.visibility = View.VISIBLE
+         /*   B2.visibility = View.VISIBLE
             B2.setText("Scan")
             B2.setOnClickListener {
                 val i = Intent(this, TScan::class.java)
                 startActivity(i)
-            }
+            }*/
 
         }
     }
