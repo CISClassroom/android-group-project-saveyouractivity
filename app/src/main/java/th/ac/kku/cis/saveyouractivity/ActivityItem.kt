@@ -12,6 +12,8 @@ class ActivityItem {
     var TEnd:String? = null
     var Field:String? = null
     var Number:String? = null
+    var TId:String? = null
+    var TimeAdd:String? = null
     var Moderator:String? = null
     var objID:String? = null
 
