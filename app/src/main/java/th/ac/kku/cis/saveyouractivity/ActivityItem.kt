@@ -7,6 +7,7 @@ class ActivityItem {
         fun create():ActivityItem = ActivityItem()
     }
     var Name:String? = null
+    var Details:String? = null
     var ADate:String? = null
     var TStart:String? = null
     var TEnd:String? = null

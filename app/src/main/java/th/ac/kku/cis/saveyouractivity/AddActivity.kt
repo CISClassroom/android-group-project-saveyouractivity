@@ -34,6 +34,7 @@ class AddActivity : AppCompatActivity() {
         ac.TEnd = TEnd.text.toString()
         ac.Number = Number.text.toString()
         ac.TId = USER.getuid()
+        ac.Details = Details.text.toString()
         ac.Moderator = Moderator.text.toString()
         ac.objID=key.key
         key.setValue(ac)

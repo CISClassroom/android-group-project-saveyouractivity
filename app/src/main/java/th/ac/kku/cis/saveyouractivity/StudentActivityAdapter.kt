@@ -13,15 +13,14 @@ import com.google.firebase.database.*
 class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcItem>) : BaseAdapter() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
-    var contextthis: Context = context
     private var itemList = ItemList
     lateinit var mDatabase: DatabaseReference
     lateinit var auth: FirebaseAuth
-    var uid: String? = null
-    lateinit var vh: ListRowHolder
+    private var uid: String? = null
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         // create object from view
+        val vh: ListRowHolder
         val objectId: String? = itemList.get(position).objID as String?
         /*var itemName: String? = itemList.get(position).Name as String?
         val itemID: String? = itemList.get(position).ID as String?*/
@@ -40,10 +39,27 @@ class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcIt
             view = convertView
             vh = view.tag as ListRowHolder
         }
-        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
+        mDatabase.orderByKey().addListenerForSingleValueEvent(object :ValueEventListener {
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // call function
+                //  for (datas in dataSnapshot.children) {
+                var datas = dataSnapshot
+
+                vh.code.text = datas.child("code").value.toString()
+                vh.Name.text = datas.child("name").value.toString()
+
+                // }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Getting Item failed, display log a message
+                Log.w("MainActivity", "loadItem:onCancelled", databaseError.toException())
+            }
+        })
         return view
     }
-    var itemListener: ValueEventListener = object : ValueEventListener {
+   /* var itemListener: ValueEventListener = object : ValueEventListener {
 
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             // call function
@@ -60,7 +76,7 @@ class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcIt
             // Getting Item failed, display log a message
             Log.w("MainActivity", "loadItem:onCancelled", databaseError.toException())
         }
-    }
+    }*/
 
     override fun getItem(index: Int): Any {
         return itemList.get(index)
