@@ -2,21 +2,24 @@
 
 แอพเก็บและประชาสัมพันธ์กิจกรรมของนักศึกษา
 
-```json
+```
 DB: {
 	Auth:{
 		uid:{
+			Name:
 			role:"student"/"teacher"
+			code:""
 		}
 	}
-	activity:{
+	Activity:{
 		qid:{
 			name:"?"
 			Details:"?"
-			image_url:"?"
-			close:boolen
-			member:{
-				uid:boolen
+			Member:{
+				uid:{
+					time:datetime
+					admin:uid
+					}
 			}
 		}
 	}
