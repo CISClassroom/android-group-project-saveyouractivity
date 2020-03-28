@@ -30,6 +30,22 @@
             android:inputType="date" />
 
         <EditText
+            android:id="@+id/TStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="เวลาเริ่ม"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/TEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="เวลาสิ้นสุด"
+            android:inputType="time" />
+
+        <EditText
             android:id="@+id/editText5"
             android:layout_width="match_parent"
             android:layout_height="145dp"
@@ -52,7 +68,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="จำนวนหน่วยกิจ"
-            android:inputType="number" />
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/editText6"
