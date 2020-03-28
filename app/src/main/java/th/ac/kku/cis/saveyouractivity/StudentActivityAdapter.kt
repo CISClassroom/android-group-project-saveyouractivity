@@ -1,13 +1,14 @@
 package th.ac.kku.cis.saveyouractivity
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 
 class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcItem>) : BaseAdapter() {
 
@@ -17,14 +18,17 @@ class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcIt
     lateinit var mDatabase: DatabaseReference
     lateinit var auth: FirebaseAuth
     var uid: String? = null
+    lateinit var vh: ListRowHolder
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         // create object from view
-        //val objectId: String? = itemList.get(position).objID as String?
-        var itemName: String? = itemList.get(position).Name as String?
-        val itemID: String? = itemList.get(position).ID as String?
+        val objectId: String? = itemList.get(position).objID as String?
+        /*var itemName: String? = itemList.get(position).Name as String?
+        val itemID: String? = itemList.get(position).ID as String?*/
         val view: View
-        val vh: ListRowHolder
+
+        mDatabase = FirebaseDatabase.getInstance().reference.child("Auth").child(objectId!!)
+
 
 
         // get list view
@@ -36,9 +40,26 @@ class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcIt
             view = convertView
             vh = view.tag as ListRowHolder
         }
-        vh.Name.text = itemName
-        vh.ADate.text = itemID
+        mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
         return view
+    }
+    var itemListener: ValueEventListener = object : ValueEventListener {
+
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            // call function
+            //  for (datas in dataSnapshot.children) {
+            var datas = dataSnapshot
+
+            vh.code.text = datas.child("code").value.toString()
+            vh.Name.text = datas.child("name").value.toString()
+
+            // }
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Item failed, display log a message
+            Log.w("MainActivity", "loadItem:onCancelled", databaseError.toException())
+        }
     }
 
     override fun getItem(index: Int): Any {
@@ -53,8 +74,8 @@ class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcIt
         return itemList.size
     }
 
-    private class ListRowHolder(row: View?) {
+    class ListRowHolder(row: View?) {
         val Name: TextView = row!!.findViewById<TextView>(R.id.Stname) as TextView
-        val ADate: TextView = row!!.findViewById<TextView>(R.id.Stcode) as TextView
+        var code: TextView = row!!.findViewById<TextView>(R.id.Stcode) as TextView
     }
 }

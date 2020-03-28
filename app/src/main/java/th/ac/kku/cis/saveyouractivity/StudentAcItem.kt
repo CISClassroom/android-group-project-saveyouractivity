@@ -9,4 +9,5 @@ class StudentAcItem {
     var objID:String? = null
     var Name:String? = null
     var ID:String? = null
+    var type:String? = null
 }

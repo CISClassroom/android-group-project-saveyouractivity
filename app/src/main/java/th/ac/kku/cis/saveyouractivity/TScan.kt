@@ -77,6 +77,7 @@ class TScan : AppCompatActivity() {
             St.admin=USER.getuid()
             St.objID = scode
             St.time = currentDate
+            St.type = "qrcode"
             mDB.child("Member").child(scode).setValue(St)
 
         }

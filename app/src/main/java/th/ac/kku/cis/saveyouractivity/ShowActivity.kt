@@ -4,12 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ListView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_show.*
 
 class ShowActivity : AppCompatActivity() {
     lateinit var mDB: DatabaseReference
     lateinit var mDBAC: DatabaseReference
+
+
+    var ItemList: MutableList<StudentAcItem>? = null
+
+    lateinit var adapter: StudentActivityAdapter
+    private var listViewItems: ListView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +29,33 @@ class ShowActivity : AppCompatActivity() {
             var i = Intent(this, TScan::class.java)
             i.putExtra("i", objID)
             startActivity(i)
+        }
+
+        ItemList = mutableListOf<StudentAcItem>()
+
+        adapter = StudentActivityAdapter(this, ItemList!!)
+        listViewItems = findViewById<View>(R.id.ShowSt) as ListView
+        listViewItems!!.setAdapter(adapter)
+        mDBAC = FirebaseDatabase.getInstance().reference.child("Activity").child(objID).child("Member")
+        mDBAC.orderByKey().addValueEventListener(itemListener2)
+    }
+    var itemListener2: ValueEventListener = object : ValueEventListener {
+
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            // call function
+            //  for (datas in dataSnapshot.children) {
+            ItemList?.clear()
+            for (datas in dataSnapshot.children) {
+                val Item = StudentAcItem.create()
+                Item.objID = datas.key
+                ItemList!!.add(Item)
+            }
+            adapter.notifyDataSetChanged()
+        }
+
+        override fun onCancelled(databaseError: DatabaseError) {
+            // Getting Item failed, display log a message
+            Log.w("MainActivity", "loadItem:onCancelled", databaseError.toException())
         }
     }
     var itemListener: ValueEventListener = object : ValueEventListener {
