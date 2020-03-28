@@ -22,7 +22,7 @@ class Mycode : AppCompatActivity() {
         val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
             hmacAlgorithm = HmacAlgorithm.SHA1,
             timeStep = 30,
-            timeStepUnit = TimeUnit.HOURS)
+            timeStepUnit = TimeUnit.MINUTES)
         val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
         val myBitmap: Bitmap = QRCode.from(USER.getuid()+"==="+timeBasedOneTimePasswordGenerator.generate()).bitmap()
         val myImage: ImageView = findViewById(R.id.code) as ImageView

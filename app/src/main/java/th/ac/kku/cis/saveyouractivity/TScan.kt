@@ -66,7 +66,7 @@ class TScan : AppCompatActivity() {
         val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
             hmacAlgorithm = HmacAlgorithm.SHA1,
             timeStep = 30,
-            timeStepUnit = TimeUnit.HOURS)
+            timeStepUnit = TimeUnit.MINUTES)
         val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
         var check:String= timeBasedOneTimePasswordGenerator.generate()
         if(check==hash){
