@@ -7,8 +7,5 @@ class ActivityItem {
         fun create():ActivityItem = ActivityItem()
     }
     var objID:String? = null
-    var Name:String? = null
-    var Details:String? = null
-    var Status:Boolean? = null
-    var Member = null
+
 }
