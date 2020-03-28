@@ -14,7 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".item"></activity>
         <activity android:name=".Mycode" />
-        <activity android:name=".Scan" />
         <activity android:name=".TScan" />
         <activity android:name=".ShowActivity" />
         <activity android:name=".AddActivity" />
