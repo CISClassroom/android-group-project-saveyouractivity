@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".AddActivity">
 
     <LinearLayout
@@ -27,7 +28,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="วันที่"
-            android:inputType="date" />
+            android:inputType="date"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/TStart"
@@ -35,7 +38,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="เวลาเริ่ม"
-            android:inputType="time" />
+            android:inputType="time"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/TEnd"
@@ -43,7 +48,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="เวลาสิ้นสุด"
-            android:inputType="time" />
+            android:inputType="time"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/Details"
@@ -52,7 +59,9 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="รายละเอียด"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/Field"
@@ -60,7 +69,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="กิจกรรมด้าน"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/Number"
@@ -68,7 +79,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="จำนวนหน่วยกิจ"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/Moderator"
@@ -76,7 +89,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="ผู้รับผิดชอบกิจกรรม"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/Save"
