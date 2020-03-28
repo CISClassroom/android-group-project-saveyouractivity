@@ -4,8 +4,12 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import dev.turingcomplete.kotlinonetimepassword.HmacAlgorithm
+import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordConfig
+import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordGenerator
 import kotlinx.android.synthetic.main.activity_mycode.*
 import net.glxn.qrgen.android.QRCode
+import java.util.concurrent.TimeUnit
 
 
 class Mycode : AppCompatActivity() {
@@ -14,7 +18,13 @@ class Mycode : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mycode)
         USER.UserData()
-        val myBitmap: Bitmap = QRCode.from(USER.getuid()).bitmap()
+        val secret = "Leia"+USER.getuid()
+        val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
+            hmacAlgorithm = HmacAlgorithm.SHA1,
+            timeStep = 30,
+            timeStepUnit = TimeUnit.HOURS)
+        val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
+        val myBitmap: Bitmap = QRCode.from(USER.getuid()+"==="+timeBasedOneTimePasswordGenerator.generate()).bitmap()
         val myImage: ImageView = findViewById(R.id.code) as ImageView
         myImage.setImageBitmap(myBitmap)
         Name.setText(USER.getname())

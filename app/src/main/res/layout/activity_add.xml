@@ -12,61 +12,58 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="ชื่อกิจกรรม"
             android:inputType="textPersonName"
-            android:text="ชื่อกิจกรรม"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/ADate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="วันที่"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:hint="วันที่"
+            android:inputType="date" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editText5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="รายละเอียด"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:gravity="start|top"
+            android:hint="รายละเอียด"
+            android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/editText4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="กิจกรรมด้าน" />
+            android:hint="กิจกรรมด้าน"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="จำนวนหน่วยกิจ" />
+            android:hint="จำนวนหน่วยกิจ"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editText6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="ผู้รับผิดชอบกิจกรรม" />
+            android:hint="ผู้รับผิดชอบกิจกรรม"
+            android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/Save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="บันทึก"

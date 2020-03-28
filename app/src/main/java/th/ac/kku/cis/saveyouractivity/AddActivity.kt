@@ -17,8 +17,8 @@ class AddActivity : AppCompatActivity() {
     fun Add(){
         var key = mDB.push()
         var ac:ActivityItem = ActivityItem.create()
-        ac.Name = ""
-        ac.objID=key.key
+        //ac.Name = ""
+        //ac.objID=key.key
         key.setValue(ac)
 
     }

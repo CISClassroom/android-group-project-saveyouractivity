@@ -57,6 +57,12 @@ class Menu : AppCompatActivity() {
                 val i = Intent(this, AddActivity::class.java)
                 startActivity(i)
             }
+            B2.visibility = View.VISIBLE
+            B2.setText("Scan")
+            B2.setOnClickListener {
+                val i = Intent(this, TScan::class.java)
+                startActivity(i)
+            }
 
         }
     }

@@ -9,6 +9,10 @@ import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import dev.turingcomplete.kotlinonetimepassword.HmacAlgorithm
+import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordConfig
+import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordGenerator
+import java.util.concurrent.TimeUnit
 
 class TScan : AppCompatActivity() {
     private lateinit var codeScanner: CodeScanner
@@ -31,7 +35,7 @@ class TScan : AppCompatActivity() {
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
+                AddStudent2Activity(it.text)
             }
         }
         codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS
@@ -44,6 +48,21 @@ class TScan : AppCompatActivity() {
         scannerView.setOnClickListener {
             codeScanner.startPreview()
         }
+    }
+    fun AddStudent2Activity(c:String){
+        var scode = c.split("===")[0]
+        var hash = c.split("===")[1]
+        val secret = "Leia"+scode
+        val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
+            hmacAlgorithm = HmacAlgorithm.SHA1,
+            timeStep = 30,
+            timeStepUnit = TimeUnit.HOURS)
+        val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
+        var check:String= timeBasedOneTimePasswordGenerator.generate()
+        if(check==hash){
+            Toast.makeText(this, "OK", Toast.LENGTH_LONG).show()
+        }
+
     }
 
     override fun onResume() {
