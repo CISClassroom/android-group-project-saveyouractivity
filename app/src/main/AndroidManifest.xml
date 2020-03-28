@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Scan"></activity>
+        <activity android:name=".Mycode"></activity>
+        <activity android:name=".Scan" />
         <activity android:name=".TScan" />
         <activity android:name=".ShowActivity" />
         <activity android:name=".AddActivity" />

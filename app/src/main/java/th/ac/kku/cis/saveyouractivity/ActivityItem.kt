@@ -9,7 +9,6 @@ class ActivityItem {
     var objID:String? = null
     var Name:String? = null
     var Details:String? = null
-    var Image_url:String? = null
     var Status:Boolean? = null
     var Member = null
 }

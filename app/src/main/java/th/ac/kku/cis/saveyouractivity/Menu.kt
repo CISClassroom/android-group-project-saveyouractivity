@@ -3,12 +3,16 @@ package th.ac.kku.cis.saveyouractivity
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_menu.*
 
 
 class Menu : AppCompatActivity() {
@@ -17,18 +21,44 @@ class Menu : AppCompatActivity() {
     lateinit var user:FirebaseUser
     var USER:UserData= UserData()
     var role:String="student"
+    lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+        auth = FirebaseAuth.getInstance()
         USER.UserData()
         Log.w("OK",USER.getuid())
         uid = USER.getuid()
         user = USER.getuser()
         mDB =FirebaseDatabase.getInstance().reference.child("Auth")//.child(uid!!)
         add_st()
+        B1.visibility = View.GONE
+        B3.setOnClickListener {
+            singOut()
+            finish()
+        }
+    }
+    private fun singOut() {
+        auth.signOut()
     }
     fun update_bt(){
-        
+        if(role=="student"){
+            B1.visibility = View.VISIBLE
+            B1.setText("Show My Qr Code")
+            B1.setOnClickListener {
+                val i = Intent(this, Mycode::class.java)
+                startActivity(i)
+            }
+        }
+        else{
+            B1.visibility = View.VISIBLE
+            B1.setText("Add Activity")
+            B1.setOnClickListener {
+                val i = Intent(this, AddActivity::class.java)
+                startActivity(i)
+            }
+
+        }
     }
     fun check_studentid(){
         mDB.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -42,6 +72,7 @@ class Menu : AppCompatActivity() {
                         add_studentid()
                     }
                 }
+                update_bt()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
