@@ -1,105 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#ECEAEA"
     tools:context=".AddActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <Button
+        android:id="@+id/Save"
+        android:layout_width="328dp"
+        android:layout_height="53dp"
+        android:background="@drawable/but"
+        android:backgroundTint="#FFEB3B"
+        android:text="บันทึก"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
 
-        <EditText
-            android:id="@+id/Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="ชื่อกิจกรรม"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="ชื่อกิจกรรม"
+        android:inputType="textPersonName"
+        android:textColor="#CC1855"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
 
-        <EditText
-            android:id="@+id/ADate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="วันที่"
-            android:inputType="date"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/ADate"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="วันที่"
+        android:inputType="date"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163" />
 
-        <EditText
-            android:id="@+id/TStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="เวลาเริ่ม"
-            android:inputType="time"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/TStart"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="เวลาเริ่ม"
+        android:inputType="time"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
 
-        <EditText
-            android:id="@+id/TEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="เวลาสิ้นสุด"
-            android:inputType="time"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/Details"
+        android:layout_width="324dp"
+        android:layout_height="120dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="รายละเอียด"
+        android:inputType="textMultiLine"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
 
-        <EditText
-            android:id="@+id/Details"
-            android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="รายละเอียด"
-            android:inputType="textMultiLine"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/TEnd"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="เวลาสิ้นสุด"
+        android:inputType="time"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
 
-        <EditText
-            android:id="@+id/Field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="กิจกรรมด้าน"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/Field"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="กิจกรรมด้าน"
+        android:inputType="textPersonName"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645" />
 
-        <EditText
-            android:id="@+id/Number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="จำนวนหน่วยกิจ"
-            android:inputType="text"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/Number"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="จำนวนหน่วยกิจ"
+        android:inputType="text"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
 
-        <EditText
-            android:id="@+id/Moderator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="ผู้รับผิดชอบกิจกรรม"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+    <EditText
+        android:id="@+id/Moderator"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="ผู้รับผิดชอบกิจกรรม"
+        android:inputType="textPersonName"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
 
-        <Button
-            android:id="@+id/Save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFEB3B"
-            android:text="บันทึก"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

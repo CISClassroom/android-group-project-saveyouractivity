@@ -1,10 +1,15 @@
 package th.ac.kku.cis.saveyouractivity
 
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.ListView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_show.*
@@ -42,8 +47,57 @@ class ShowActivity : AppCompatActivity() {
         mDBAC.orderByKey().addValueEventListener(itemListener2)
         AddStAc.setOnClickListener {
             // กด
+            addNewItem()
         }
     }
+    fun addNewItem(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setMessage("Add New Link")
+        dialog.setTitle("Enter Link and Note")
+
+        val context: Context? = this
+        val layout = LinearLayout(context)
+        layout.orientation = LinearLayout.VERTICAL
+
+        val et = EditText(context)
+        et.hint = "URL"
+        et.inputType= InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS //"textWebEmailAddress"
+        layout.addView(et) // Notice this is an add method
+
+        val descriptionBox = EditText(context)
+        descriptionBox.hint = "Note"
+        layout.addView(descriptionBox) // Another add method
+        dialog.setView(layout)
+
+        dialog.setPositiveButton("Submit"){
+                dialog,positiveButton ->
+                //var newURL = URLItem.create()
+              //  var url: String = c.clean(et.text.toString())
+                var note: String = descriptionBox.text.toString()
+                //newURL.url = url
+               // Log.w("URL", newURL.url)
+                /* try{
+               newURL.URLtitle = Content().gettilte(url)
+            }
+            catch (ex:Exception){
+                Log.e("url ->",ex.toString())
+                dialog.dismiss()
+            }*/
+
+                var key: String? = ""
+         //       newURL2user.Note = note
+                var i = 0
+
+
+                Log.w("Key Key", key)
+
+
+
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
     var itemListener2: ValueEventListener = object : ValueEventListener {
 
         override fun onDataChange(dataSnapshot: DataSnapshot) {
