@@ -10,36 +10,36 @@
 
     <Button
         android:id="@+id/B3"
-        android:layout_width="410dp"
-        android:layout_height="83dp"
+        android:layout_width="203dp"
+        android:layout_height="76dp"
         android:background="@drawable/but"
         android:backgroundTint="#FFEB3B"
         android:duplicateParentState="false"
         android:editable="false"
         android:filterTouchesWhenObscured="false"
         android:text="Logout"
-        android:textSize="36sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.644" />
 
     <Button
         android:id="@+id/B1"
-        android:layout_width="411dp"
-        android:layout_height="87dp"
+        android:layout_width="203dp"
+        android:layout_height="76dp"
         android:background="@drawable/but"
         android:backgroundTint="#FFEB3B"
         android:text="Button"
-        android:textSize="36sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <ListView
         android:id="@+id/ShowActivity"
