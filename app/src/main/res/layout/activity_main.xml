@@ -7,14 +7,15 @@
     android:background="@drawable/pok"
     tools:context=".MainActivity">
 
-    <Button
+    <com.developer.gbuttons.GoogleSignInButton
         android:id="@+id/sign_in"
         android:layout_width="101dp"
         android:layout_height="50dp"
         android:layout_marginTop="385dp"
         android:layout_marginBottom="224dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="sign in"
+        android:text="@string/google_sign_up"
+        app:isDarkTheme="false"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

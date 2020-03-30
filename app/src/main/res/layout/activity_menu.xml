@@ -10,41 +10,40 @@
 
     <Button
         android:id="@+id/B3"
-        android:layout_width="203dp"
-        android:layout_height="76dp"
+        android:layout_width="187dp"
+        android:layout_height="51dp"
         android:background="@drawable/but"
         android:backgroundTint="#FFEB3B"
         android:duplicateParentState="false"
         android:editable="false"
         android:filterTouchesWhenObscured="false"
         android:text="Logout"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.516" />
 
     <Button
         android:id="@+id/B1"
-        android:layout_width="203dp"
-        android:layout_height="76dp"
+        android:layout_width="189dp"
+        android:layout_height="55dp"
         android:background="@drawable/but"
         android:backgroundTint="#FFEB3B"
         android:text="Button"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.661" />
 
     <ListView
         android:id="@+id/ShowActivity"
-        android:layout_width="411dp"
-        android:layout_height="101dp"
+        android:layout_width="410dp"
+        android:layout_height="133dp"
         app:layout_constraintBottom_toTopOf="@+id/B1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
