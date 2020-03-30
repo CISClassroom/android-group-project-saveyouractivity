@@ -13,9 +13,14 @@ import android.widget.LinearLayout
 import android.widget.ListView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_show.*
+import th.ac.kku.cis.saveyouractivity.ActivityItem.Factory.create
+import th.ac.kku.cis.saveyouractivity.StudentAcItem.Factory.create
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ShowActivity : AppCompatActivity() {
     lateinit var mDB: DatabaseReference
+    lateinit var mDB2: DatabaseReference
     lateinit var mDBAC: DatabaseReference
 
 
@@ -24,13 +29,17 @@ class ShowActivity : AppCompatActivity() {
     lateinit var adapter: StudentActivityAdapter
     private var listViewItems: ListView? = null
 
+    var USER:UserData= UserData()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        USER.UserData()
         val objID:String= intent.getStringExtra("i")
         mDB = FirebaseDatabase.getInstance().reference.child("Activity").child(objID)
+        mDB2 = FirebaseDatabase.getInstance().reference
         mDB.orderByKey().addValueEventListener(itemListener)
         Scanbtn.setOnClickListener {
             var i = Intent(this, TScan::class.java)
@@ -60,12 +69,12 @@ class ShowActivity : AppCompatActivity() {
         layout.orientation = LinearLayout.VERTICAL
 
         val et = EditText(context)
-        et.hint = "URL"
+        et.hint = "Student ID (Ex 60XXXXXXX-X)"
         et.inputType= InputType.TYPE_TEXT_VARIATION_WEB_EMAIL_ADDRESS //"textWebEmailAddress"
         layout.addView(et) // Notice this is an add method
 
         val descriptionBox = EditText(context)
-        descriptionBox.hint = "Note"
+        descriptionBox.hint = "Full Name"
         layout.addView(descriptionBox) // Another add method
         dialog.setView(layout)
 
@@ -74,6 +83,19 @@ class ShowActivity : AppCompatActivity() {
                 //var newURL = URLItem.create()
               //  var url: String = c.clean(et.text.toString())
                 var note: String = descriptionBox.text.toString()
+            var j = mDB2.child("Auth").push()
+            var st:StudentItem = StudentItem.create()
+            st.code=et.text.toString()
+            st.name = descriptionBox.text.toString()
+            j.setValue(st)
+            var t=mDBAC.child(j.key.toString())
+            t.child("admin").setValue(USER.getuid())
+            t.child("objID").setValue(j.key.toString())
+            val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+            val currentDate = sdf.format(Date())
+            t.child("time").setValue(currentDate)
+            t.child("type").setValue("input")
+
                 //newURL.url = url
                // Log.w("URL", newURL.url)
                 /* try{

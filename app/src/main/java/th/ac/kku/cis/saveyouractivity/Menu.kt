@@ -157,17 +157,26 @@ class Menu : AppCompatActivity() {
                 if (snapshot.hasChild(uid)) {
                     // it exists!
                     role=snapshot.child(uid).child("role").value.toString()
+                    if(snapshot.child(uid).hasChild("type")){
+
+                    }
+                    else{
+                        mDB.child(uid).child("type").setValue("auth")
+                    }
                 } else {
                     // does not exist
                     if("kku.ac.th" in user.email.toString()){
                         mDB.child(uid).child("role").setValue("teacher")
+                        mDB.child(uid).child("type").setValue("auth")
                         role="teacher"
                     }
                     else{
                         mDB.child(uid).child("role").setValue("student")
+                        mDB.child(uid).child("type").setValue("auth")
                         role="student"
                     }
-                }
+            }
+
                 mDB.child(uid).child("name").setValue(USER.getname())
                 check_studentid()
             }
