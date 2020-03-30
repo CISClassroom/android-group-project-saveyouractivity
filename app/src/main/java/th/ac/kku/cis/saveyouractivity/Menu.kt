@@ -107,6 +107,7 @@ class Menu : AppCompatActivity() {
             B1.setOnClickListener {
                 val i = Intent(this, AddActivity::class.java)
                 startActivity(i)
+
             }
             listViewItems!!.visibility = View.VISIBLE
          /*   B2.visibility = View.VISIBLE

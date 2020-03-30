@@ -71,7 +71,7 @@
         <Button
             android:id="@+id/Scanbtn"
             android:layout_width="209dp"
-            android:layout_height="66dp"
+            android:layout_height="match_parent"
             android:background="#FFEB3B"
             android:text="Scan Qr Code"
             android:textColor="#000000"

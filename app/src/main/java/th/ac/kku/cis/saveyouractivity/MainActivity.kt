@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         if(auth.currentUser!=null){
             val i = Intent(this, Menu::class.java)
             startActivity(i)
+            finish()
         }
     }
 
