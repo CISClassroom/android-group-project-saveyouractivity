@@ -13,7 +13,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="385dp"
         android:layout_marginBottom="224dp"
-        android:text="@string/google_sign_up"
+        android:text="@string/google_sign_in"
         app:isDarkTheme="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
