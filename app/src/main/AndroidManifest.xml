@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".item"></activity>
+        <activity android:name=".Student"></activity>
+        <activity android:name=".item" />
         <activity android:name=".Mycode" />
         <activity android:name=".TScan" />
         <activity android:name=".ShowActivity" />

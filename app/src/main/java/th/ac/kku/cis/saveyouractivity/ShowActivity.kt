@@ -22,6 +22,8 @@ class ShowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show)
+        if (supportActionBar != null)
+            supportActionBar?.hide()
         val objID:String= intent.getStringExtra("i")
         mDB = FirebaseDatabase.getInstance().reference.child("Activity").child(objID)
         mDB.orderByKey().addValueEventListener(itemListener)
@@ -38,6 +40,9 @@ class ShowActivity : AppCompatActivity() {
         listViewItems!!.setAdapter(adapter)
         mDBAC = FirebaseDatabase.getInstance().reference.child("Activity").child(objID).child("Member")
         mDBAC.orderByKey().addValueEventListener(itemListener2)
+        AddStAc.setOnClickListener {
+            // กด
+        }
     }
     var itemListener2: ValueEventListener = object : ValueEventListener {
 

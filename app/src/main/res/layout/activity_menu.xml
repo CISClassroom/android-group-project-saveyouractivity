@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="@drawable/asd"
     tools:context=".Menu">
 
     <LinearLayout
@@ -20,12 +22,14 @@
             android:id="@+id/B1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
             android:text="Button" />
 
         <Button
             android:id="@+id/B3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FFEB3B"
             android:text="Logout" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

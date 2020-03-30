@@ -91,12 +91,15 @@ class Menu : AppCompatActivity() {
     }
     fun update_bt(){
         if(role=="student"){
-            B1.visibility = View.VISIBLE
+            /*B1.visibility = View.VISIBLE
             B1.setText("Show My Qr Code")
             B1.setOnClickListener {
                 val i = Intent(this, Mycode::class.java)
                 startActivity(i)
-            }
+            }*/
+            val i = Intent(this, Student::class.java)
+            startActivity(i)
+            finish()
         }
         else{
             B1.visibility = View.VISIBLE

@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             .request { granted, denied, permanentlyDenied ->
                 //Here you can check results...
                 if(permanentlyDenied.size!=0){
-                    finish()
+                    AppExit()
 
                 }
             }
@@ -44,6 +44,16 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         sign_in.setOnClickListener { singIn() }
         checklogin()
+    }
+    fun AppExit() {
+        finish()
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.addCategory(Intent.CATEGORY_HOME)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+
+        /*int pid = android.os.Process.myPid();=====> use this if you want to kill your activity. But its not a good one to do.
+    android.os.Process.killProcess(pid);*/
     }
     private fun singOut() {
         auth.signOut()
