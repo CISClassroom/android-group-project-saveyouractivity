@@ -14,6 +14,8 @@ class AddActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
+        if (supportActionBar != null)
+            supportActionBar?.hide()
         USER.UserData()
         mDB = FirebaseDatabase.getInstance().reference.child("Activity")
         Save.setOnClickListener {

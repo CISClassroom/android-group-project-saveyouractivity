@@ -17,6 +17,8 @@ class Mycode : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mycode)
+        if (supportActionBar != null)
+            supportActionBar?.hide()
         USER.UserData()
         val secret = "Leia"+USER.getuid()
         val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,

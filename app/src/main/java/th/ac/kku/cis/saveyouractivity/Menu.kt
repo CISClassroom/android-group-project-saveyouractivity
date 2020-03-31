@@ -33,6 +33,8 @@ class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+        if (supportActionBar != null)
+            supportActionBar?.hide()
         auth = FirebaseAuth.getInstance()
         USER.UserData()
         Log.w("OK",USER.getuid())

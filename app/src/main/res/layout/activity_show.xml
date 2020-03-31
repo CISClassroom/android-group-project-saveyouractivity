@@ -1,94 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/bkd"
     tools:context=".ShowActivity">
 
     <TextView
         android:id="@+id/ADate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/TStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ADate" />
 
     <TextView
         android:id="@+id/TStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/TEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <TextView
         android:id="@+id/TEnd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TStart" />
 
     <TextView
         android:id="@+id/Details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TEnd" />
 
     <TextView
         android:id="@+id/Field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Moderator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Details" />
+
 
     <TextView
         android:id="@+id/Moderator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="37dp"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Field" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/Scanbtn"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:background="@drawable/but"
+        android:backgroundTint="#FFEB3B"
+        android:text="Scan Qr Code"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
-        <Button
-            android:id="@+id/Scanbtn"
-            android:layout_width="209dp"
-            android:layout_height="match_parent"
-            android:background="#FFEB3B"
-            android:text="Scan Qr Code"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/AddStAc"
-            android:layout_width="219dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#F6558C"
-            android:text="Add Student"
-            android:textSize="18sp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/AddStAc"
+        android:layout_width="170dp"
+        android:layout_height="52dp"
+        android:background="@drawable/but"
+        android:backgroundTint="#FA4482"
+        android:text="Add Student"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <ListView
         android:id="@+id/ShowSt"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_width="341dp"
+        android:layout_height="286dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
