@@ -24,7 +24,7 @@ class Mycode : AppCompatActivity() {
         setContentView(R.layout.activity_mycode)
         if (supportActionBar != null)
             supportActionBar?.hide()
-        object : CountDownTimer(21000, 1000) {
+        object : CountDownTimer(60000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tv4.setText(" " + millisUntilFinished / 1000)
             }
@@ -54,7 +54,7 @@ class Mycode : AppCompatActivity() {
         val secret = "Leia"+USER.getuid()
         val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
             hmacAlgorithm = HmacAlgorithm.SHA1,
-            timeStep = 2,
+            timeStep = 1,
             timeStepUnit = TimeUnit.MINUTES)
         val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
         val myBitmap: Bitmap = QRCode.from(USER.getuid()+"==="+timeBasedOneTimePasswordGenerator.generate()).bitmap()

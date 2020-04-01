@@ -65,7 +65,7 @@ class TScan : AppCompatActivity() {
         val secret = "Leia"+scode
         val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
             hmacAlgorithm = HmacAlgorithm.SHA1,
-            timeStep = 2,
+            timeStep = 1,
             timeStepUnit = TimeUnit.MINUTES)
         val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
         var check:String= timeBasedOneTimePasswordGenerator.generate()
