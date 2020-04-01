@@ -10,9 +10,9 @@
 
     <Button
         android:id="@+id/B3"
-        android:layout_width="143dp"
+        android:layout_width="130dp"
         android:layout_height="57dp"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="576dp"
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="53dp"
@@ -32,9 +32,9 @@
 
     <Button
         android:id="@+id/B1"
-        android:layout_width="143dp"
+        android:layout_width="130dp"
         android:layout_height="57dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="106dp"
         android:layout_marginTop="584dp"
         android:layout_marginEnd="244dp"
         android:layout_marginBottom="53dp"
@@ -51,10 +51,10 @@
 
     <ListView
         android:id="@+id/ShowActivity"
-        android:layout_width="312dp"
-        android:layout_height="371dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginEnd="84dp"
+        android:layout_width="255dp"
+        android:layout_height="337dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintBottom_toTopOf="@+id/B1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

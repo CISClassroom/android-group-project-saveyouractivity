@@ -1,9 +1,13 @@
 package th.ac.kku.cis.saveyouractivity
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import dev.turingcomplete.kotlinonetimepassword.HmacAlgorithm
 import dev.turingcomplete.kotlinonetimepassword.TimeBasedOneTimePasswordConfig
@@ -20,6 +24,28 @@ class Mycode : AppCompatActivity() {
         setContentView(R.layout.activity_mycode)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        object : CountDownTimer(21000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                tv4.setText(" " + millisUntilFinished / 1000)
+            }
+
+            override fun onFinish() {
+                tv4.setText("หมดเวลา !!")
+
+                val builder = AlertDialog.Builder(this@Mycode)
+                builder.setTitle("หมดเวลาแล้ว !")
+                builder.setMessage(">>> กรูณากดโชว์ QR CODE อีกครั้ง")
+                builder.setPositiveButton("ตกลง"){dialog, which ->
+                    var i = Intent(this@Mycode, Student::class.java)
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(i)
+                }
+
+                val dialog: AlertDialog = builder.create()
+                dialog.show()
+
+            }
+        }.start()
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
