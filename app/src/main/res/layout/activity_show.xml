@@ -5,19 +5,20 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bkd"
+    android:background="@drawable/iiii"
     tools:context=".ShowActivity">
 
     <TextView
         android:id="@+id/ADate"
         android:layout_width="330dp"
         android:layout_height="37dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,11 +27,11 @@
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/TStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ADate" />
 
@@ -39,10 +40,11 @@
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/TEnd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Name" />
 
@@ -51,22 +53,36 @@
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Details"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TStart" />
+
+    <TextView
+        android:id="@+id/Moderator"
+        android:layout_width="330dp"
+        android:layout_height="37dp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Field" />
 
     <TextView
         android:id="@+id/Details"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Field"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TEnd" />
 
@@ -75,63 +91,58 @@
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Moderator"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Details" />
 
-
-    <TextView
-        android:id="@+id/Moderator"
-        android:layout_width="330dp"
-        android:layout_height="37dp"
-        android:text="TextView"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Field" />
 
     <Button
         android:id="@+id/Scanbtn"
         android:layout_width="144dp"
         android:layout_height="45dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="232dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FFEB3B"
+        android:backgroundTint="@android:color/background_dark"
         android:text="Scan Qr Code"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.527" />
 
     <Button
         android:id="@+id/AddStAc"
         android:layout_width="144dp"
         android:layout_height="45dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginEnd="39dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FA4482"
+        android:backgroundTint="@android:color/holo_green_light"
         android:text="Add Student"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <ListView
         android:id="@+id/ShowSt"
-        android:layout_width="330dp"
-        android:layout_height="280dp"
+        android:layout_width="335dp"
+        android:layout_height="219dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.888" />
 </androidx.constraintlayout.widget.ConstraintLayout>

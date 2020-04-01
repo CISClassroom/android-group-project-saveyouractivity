@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
@@ -35,6 +36,10 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         auth = FirebaseAuth.getInstance()
         USER.UserData()
         Log.w("OK",USER.getuid())
@@ -130,7 +135,7 @@ class Menu : AppCompatActivity() {
 
                     }
                     else{
-                        add_studentid()
+                  //      add_studentid()
                     }
                 }
                 update_bt()
@@ -139,21 +144,7 @@ class Menu : AppCompatActivity() {
             override fun onCancelled(databaseError: DatabaseError) {}
         })
     }
-    fun add_studentid(){
-        var taskEditText: EditText =  EditText(this)
-        val dialog: AlertDialog = AlertDialog.Builder(this)
-            .setTitle("Input Student ID")
-            .setMessage("Ex 60XXXXXXX-X")
-            .setView(taskEditText)
-            .setPositiveButton("Save",
-                DialogInterface.OnClickListener { dialog, which ->
-                    val task: String = java.lang.String.valueOf(taskEditText.getText())
-                    mDB.child(uid).child("code").setValue(task)
-                })
-            // .setNegativeButton("Cancel", null)
-            .create()
-        dialog.show()
-    }
+
     fun add_st(){
         mDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pok"
+    android:background="@drawable/baby"
     tools:context=".MainActivity">
 
     <com.developer.gbuttons.GoogleSignInButton
         android:id="@+id/sign_in"
         android:layout_width="200dp"
         android:layout_height="47dp"
-        android:layout_marginTop="385dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginBottom="304dp"
         android:text="@string/google_sign_in"
         app:isDarkTheme="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

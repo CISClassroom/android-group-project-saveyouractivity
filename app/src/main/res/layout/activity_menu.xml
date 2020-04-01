@@ -5,51 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@drawable/bkd"
+    android:background="@drawable/addmm"
     tools:context=".Menu">
 
     <Button
         android:id="@+id/B3"
-        android:layout_width="130dp"
-        android:layout_height="53dp"
+        android:layout_width="143dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="576dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="53dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FFEB3B"
+        android:backgroundTint="@android:color/holo_red_light"
         android:duplicateParentState="false"
         android:editable="false"
         android:filterTouchesWhenObscured="false"
         android:text="Logout"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/B1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.924" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/B1"
-        android:layout_width="134dp"
-        android:layout_height="53dp"
+        android:layout_width="143dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="584dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="53dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FFEB3B"
-        android:text="Button"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="Add Activity"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ListView
         android:id="@+id/ShowActivity"
-        android:layout_width="411dp"
-        android:layout_height="521dp"
+        android:layout_width="312dp"
+        android:layout_height="371dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginEnd="84dp"
         app:layout_constraintBottom_toTopOf="@+id/B1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.817" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,40 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bkd"
+    android:background="@drawable/adddata"
     tools:context=".AddActivity">
 
     <Button
         android:id="@+id/Save"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FFEB3B"
+        android:backgroundTint="@android:color/darker_gray"
         android:text="บันทึก"
-        android:textColor="#000000"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/Details"
         android:layout_width="328dp"
-        android:layout_height="52dp"
+        android:layout_height="100dp"
         android:ems="10"
-        android:hint="ชื่อกิจกรรม"
-        android:inputType="textPersonName"
-        android:textColor="#CC1855"
+        android:gravity="start|top"
+        android:hint="รายละเอียด"
+        android:inputType="textMultiLine"
+        android:textColor="#E91E63"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintVertical_bias="0.469" />
+
+    <EditText
+        android:id="@+id/Number"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="จำนวนหน่วยกิจ"
+        android:inputType="text"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
 
     <EditText
         android:id="@+id/ADate"
@@ -53,56 +69,23 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.257" />
 
     <EditText
-        android:id="@+id/TStart"
+        android:id="@+id/Name"
         android:layout_width="328dp"
         android:layout_height="52dp"
         android:ems="10"
-        android:hint="เวลาเริ่ม"
-        android:inputType="time"
-        android:textColor="#E91E63"
+        android:hint="ชื่อกิจกรรม"
+        android:inputType="textPersonName"
+        android:textColor="#CC1855"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
-
-    <EditText
-        android:id="@+id/Details"
-        android:layout_width="324dp"
-        android:layout_height="120dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="รายละเอียด"
-        android:inputType="textMultiLine"
-        android:textColor="#E91E63"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
-
-    <EditText
-        android:id="@+id/TEnd"
-        android:layout_width="328dp"
-        android:layout_height="52dp"
-        android:ems="10"
-        android:hint="เวลาสิ้นสุด"
-        android:inputType="time"
-        android:textColor="#E91E63"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <EditText
         android:id="@+id/Field"
@@ -118,23 +101,23 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645" />
+        app:layout_constraintVertical_bias="0.686" />
 
     <EditText
-        android:id="@+id/Number"
+        android:id="@+id/TStart"
         android:layout_width="328dp"
         android:layout_height="52dp"
         android:ems="10"
-        android:hint="จำนวนหน่วยกิจ"
-        android:inputType="text"
+        android:hint="เวลาเริ่ม"
+        android:inputType="time"
         android:textColor="#E91E63"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.344" />
 
     <EditText
         android:id="@+id/Moderator"
@@ -147,9 +130,35 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.86" />
+
+    <EditText
+        android:id="@+id/TEnd"
+        android:layout_width="328dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="เวลาสิ้นสุด"
+        android:inputType="time"
+        android:textColor="#E91E63"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
+
+    <Button
+        android:id="@+id/btncancel"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
+        android:text="ยกเลิก"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

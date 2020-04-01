@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.InputType
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ListView
@@ -36,6 +37,10 @@ class ShowActivity : AppCompatActivity() {
         setContentView(R.layout.activity_show)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         USER.UserData()
         val objID:String= intent.getStringExtra("i")
         mDB = FirebaseDatabase.getInstance().reference.child("Activity").child(objID)

@@ -2,6 +2,7 @@ package th.ac.kku.cis.saveyouractivity
 
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import dev.turingcomplete.kotlinonetimepassword.HmacAlgorithm
@@ -19,6 +20,10 @@ class Mycode : AppCompatActivity() {
         setContentView(R.layout.activity_mycode)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         USER.UserData()
         val secret = "Leia"+USER.getuid()
         val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,

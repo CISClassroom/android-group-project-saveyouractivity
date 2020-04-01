@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
 
-    android:background="@drawable/asd"
+    android:background="@drawable/sdffrr"
     android:orientation="vertical"
     tools:context=".Student">
 
@@ -16,10 +16,11 @@
         android:layout_height="53dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="87dp"
-        android:layout_marginBottom="277dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="286dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FFEB3B"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Show My Qr code"
         android:textSize="18sp" />
 
@@ -29,10 +30,11 @@
         android:layout_height="53dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="86dp"
-        android:layout_marginBottom="203dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="204dp"
         android:background="@drawable/but"
-        android:backgroundTint="#FFEB3B"
+        android:backgroundTint="@android:color/holo_red_light"
         android:text="Logout"
         android:textSize="18sp" />
 </RelativeLayout>
