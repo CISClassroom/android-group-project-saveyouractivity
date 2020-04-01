@@ -10,22 +10,25 @@
 
     <TextView
         android:id="@+id/ADate"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Name"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -37,8 +40,10 @@
 
     <TextView
         android:id="@+id/TStart"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -50,8 +55,10 @@
 
     <TextView
         android:id="@+id/TEnd"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -63,8 +70,10 @@
 
     <TextView
         android:id="@+id/Moderator"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -75,8 +84,10 @@
 
     <TextView
         android:id="@+id/Details"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -88,8 +99,10 @@
 
     <TextView
         android:id="@+id/Field"
-        android:layout_width="330dp"
+        android:layout_width="300dp"
         android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="81dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -104,26 +117,23 @@
         android:id="@+id/Scanbtn"
         android:layout_width="144dp"
         android:layout_height="45dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="232dp"
+        android:layout_marginStart="30dp"
         android:background="@drawable/but"
         android:backgroundTint="@android:color/background_dark"
         android:text="Scan Qr Code"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintVertical_bias="0.534" />
 
     <Button
         android:id="@+id/AddStAc"
         android:layout_width="144dp"
         android:layout_height="45dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginEnd="39dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/but"
         android:backgroundTint="@android:color/holo_green_light"
         android:text="Add Student"
@@ -134,12 +144,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.534" />
 
     <ListView
         android:id="@+id/ShowSt"
-        android:layout_width="335dp"
-        android:layout_height="219dp"
+        android:layout_width="280dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

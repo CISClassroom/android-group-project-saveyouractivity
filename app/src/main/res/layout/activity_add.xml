@@ -11,6 +11,8 @@
         android:id="@+id/Save"
         android:layout_width="100dp"
         android:layout_height="40dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="120dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/but"
         android:backgroundTint="@android:color/darker_gray"
@@ -18,13 +20,12 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintEnd_toStartOf="@+id/btncancel"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/Details"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="100dp"
         android:ems="10"
         android:gravity="start|top"
@@ -41,7 +42,7 @@
 
     <EditText
         android:id="@+id/Number"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="จำนวนหน่วยกิจ"
@@ -57,7 +58,7 @@
 
     <EditText
         android:id="@+id/ADate"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="วันที่"
@@ -73,7 +74,7 @@
 
     <EditText
         android:id="@+id/Name"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="ชื่อกิจกรรม"
@@ -89,7 +90,7 @@
 
     <EditText
         android:id="@+id/Field"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="กิจกรรมด้าน"
@@ -105,7 +106,7 @@
 
     <EditText
         android:id="@+id/TStart"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="เวลาเริ่ม"
@@ -121,7 +122,7 @@
 
     <EditText
         android:id="@+id/Moderator"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="ผู้รับผิดชอบกิจกรรม"
@@ -137,7 +138,7 @@
 
     <EditText
         android:id="@+id/TEnd"
-        android:layout_width="328dp"
+        android:layout_width="290dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="เวลาสิ้นสุด"
@@ -155,7 +156,7 @@
         android:id="@+id/btncancel"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="16dp"
         android:text="ยกเลิก"
         app:layout_constraintBottom_toBottomOf="parent"
