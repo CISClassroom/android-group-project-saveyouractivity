@@ -8,7 +8,7 @@
         android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
+        android:text="กำลังโหลด"
         android:textColor="#000000"
         android:textSize="18sp" />
 
@@ -17,7 +17,7 @@
         android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
+        android:text="กำลังโหลด"
         android:textColor="#000000"
         android:textSize="18sp" />
 </LinearLayout>

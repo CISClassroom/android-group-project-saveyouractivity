@@ -3,7 +3,7 @@ package th.ac.kku.cis.saveyouractivity
 import java.util.*
 
 class ActivityItem {
-    companion object Factory{ // สร้างเมดทอนแบบย่อ ๆ
+    companion object Factory{ // สร้างเมดทอนแบบย่อ ๆ ของกิจกรรม
         fun create():ActivityItem = ActivityItem()
     }
     var Name:String? = null

@@ -59,24 +59,7 @@ class StudentActivityAdapter(context: Context, ItemList: MutableList<StudentAcIt
         })
         return view
     }
-   /* var itemListener: ValueEventListener = object : ValueEventListener {
 
-        override fun onDataChange(dataSnapshot: DataSnapshot) {
-            // call function
-            //  for (datas in dataSnapshot.children) {
-            var datas = dataSnapshot
-
-            vh.code.text = datas.child("code").value.toString()
-            vh.Name.text = datas.child("name").value.toString()
-
-            // }
-        }
-
-        override fun onCancelled(databaseError: DatabaseError) {
-            // Getting Item failed, display log a message
-            Log.w("MainActivity", "loadItem:onCancelled", databaseError.toException())
-        }
-    }*/
 
     override fun getItem(index: Int): Any {
         return itemList.get(index)

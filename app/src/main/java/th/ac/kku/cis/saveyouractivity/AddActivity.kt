@@ -33,9 +33,9 @@ class AddActivity : AppCompatActivity() {
             var i = Intent(this, Menu::class.java)
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(i)
-        }
+        }//ปุ่มยกเลิกกิจกรรม
     }
-    fun Add(){
+    fun Add(){ //แอดกิจกรรมลงfibase เอามาจาก class activityitems
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())
         var key = mDB.push()

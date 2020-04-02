@@ -12,15 +12,15 @@ import com.google.firebase.database.DatabaseReference
 class ActivityAdapter(context: Context, ItemList: MutableList<ActivityItem>) : BaseAdapter() {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
-    var contextthis: Context = context
+    //var contextthis: Context = context
     private var itemList = ItemList
-    lateinit var mDatabase: DatabaseReference
-    lateinit var auth: FirebaseAuth
-    var uid: String? = null
+   // lateinit var mDatabase: DatabaseReference
+    //lateinit var auth: FirebaseAuth
+    //var uid: String? = null
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         // create object from view
-        val objectId: String? = itemList.get(position).objID as String?
+       // val objectId: String? = itemList.get(position).objID as String?
         var itemName: String? = itemList.get(position).Name as String?
         val itemDate: String? = itemList.get(position).ADate as String?
         val view: View

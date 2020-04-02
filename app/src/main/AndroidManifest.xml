@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Student"></activity>
+        <activity android:name=".item" />
         <activity android:name=".Mycode" />
         <activity android:name=".TScan" />
         <activity android:name=".ShowActivity" />

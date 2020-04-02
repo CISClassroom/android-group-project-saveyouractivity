@@ -13,12 +13,12 @@
     <Button
         android:id="@+id/B1"
         android:layout_width="200dp"
-        android:layout_height="53dp"
+        android:layout_height="60dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="103dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="370dp"
         android:layout_marginEnd="108dp"
         android:background="@drawable/but"
         android:backgroundTint="@android:color/holo_orange_dark"
@@ -37,8 +37,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="103dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="212dp"
         android:background="@drawable/but"
         android:backgroundTint="@android:color/holo_red_light"
         android:text="Logout"
@@ -46,5 +47,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/B1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

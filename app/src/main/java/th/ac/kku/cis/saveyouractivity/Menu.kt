@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.github.loadingview.LoadingDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -30,6 +31,7 @@ class Menu : AppCompatActivity() {
 
     lateinit var adapter: ActivityAdapter
     private var listViewItems: ListView? = null
+    var dialog2: LoadingDialog?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class Menu : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
+        dialog2 = LoadingDialog.get(this).show();
         auth = FirebaseAuth.getInstance()
         USER.UserData()
         Log.w("OK",USER.getuid())
@@ -95,6 +98,9 @@ class Menu : AppCompatActivity() {
     }
     private fun singOut() {
         auth.signOut()
+        val i = Intent(applicationContext, MainActivity::class.java)
+        startActivity(i)
+        finish()
     }
     fun update_bt(){
         if(role=="student"){
@@ -148,6 +154,7 @@ class Menu : AppCompatActivity() {
     fun add_st(){
         mDB.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                dialog2?.hide()
                 if (snapshot.hasChild(uid)) {
                     // it exists!
                     role=snapshot.child(uid).child("role").value.toString()

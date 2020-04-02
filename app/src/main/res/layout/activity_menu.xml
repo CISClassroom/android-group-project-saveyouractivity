@@ -54,11 +54,10 @@
         android:layout_width="255dp"
         android:layout_height="337dp"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="175dp"
         android:layout_marginEnd="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/B1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

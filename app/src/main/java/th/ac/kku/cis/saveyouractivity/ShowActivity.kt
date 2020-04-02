@@ -46,6 +46,7 @@ class ShowActivity : AppCompatActivity() {
         mDB = FirebaseDatabase.getInstance().reference.child("Activity").child(objID)
         mDB2 = FirebaseDatabase.getInstance().reference
         mDB.orderByKey().addValueEventListener(itemListener)
+
         Scanbtn.setOnClickListener {
             var i = Intent(this, TScan::class.java)
             i.putExtra("i", objID)

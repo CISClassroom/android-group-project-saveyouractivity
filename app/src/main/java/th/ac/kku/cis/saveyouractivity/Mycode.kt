@@ -24,7 +24,21 @@ class Mycode : AppCompatActivity() {
         setContentView(R.layout.activity_mycode)
         if (supportActionBar != null)
             supportActionBar?.hide()
-        object : CountDownTimer(60000, 1000) {
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+        USER.UserData()
+        val secret = "Leia"+USER.getuid()
+        val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
+            hmacAlgorithm = HmacAlgorithm.SHA1,
+            timeStep = 1,
+            timeStepUnit = TimeUnit.MINUTES)
+        val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
+        val myBitmap: Bitmap = QRCode.from(USER.getuid()+"==="+timeBasedOneTimePasswordGenerator.generate()).bitmap()
+        val myImage: ImageView = findViewById(R.id.code) as ImageView
+        object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 tv4.setText(" " + millisUntilFinished / 1000)
             }
@@ -46,19 +60,6 @@ class Mycode : AppCompatActivity() {
 
             }
         }.start()
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-        USER.UserData()
-        val secret = "Leia"+USER.getuid()
-        val config = TimeBasedOneTimePasswordConfig(codeDigits = 8,
-            hmacAlgorithm = HmacAlgorithm.SHA1,
-            timeStep = 1,
-            timeStepUnit = TimeUnit.MINUTES)
-        val timeBasedOneTimePasswordGenerator = TimeBasedOneTimePasswordGenerator(secret.toByteArray(), config)
-        val myBitmap: Bitmap = QRCode.from(USER.getuid()+"==="+timeBasedOneTimePasswordGenerator.generate()).bitmap()
-        val myImage: ImageView = findViewById(R.id.code) as ImageView
         myImage.setImageBitmap(myBitmap)
         Name.setText(USER.getname())
     }
