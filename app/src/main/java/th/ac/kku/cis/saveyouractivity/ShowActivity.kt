@@ -66,8 +66,8 @@ class ShowActivity : AppCompatActivity() {
     }
     fun addNewItem(){
         val dialog = AlertDialog.Builder(this)
-        dialog.setMessage("Add New Link")
-        dialog.setTitle("Enter Link and Note")
+        dialog.setMessage("Add Student")
+        dialog.setTitle("Enter Student ID and Full Name")
 
         val context: Context? = this
         val layout = LinearLayout(context)
